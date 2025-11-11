@@ -154,8 +154,8 @@ namespace R25_Default_Data_Editor
         {
             if (HeaderData != null)
             {
-                output.Write(HeaderData);
-                output.WriteInt32(LeagueCount);
+                output.Write(HeaderData, Endian.Little);
+                output.WriteInt32(LeagueCount, Endian.Little);
 
                 if (Leagues != null)
                 {
@@ -165,13 +165,13 @@ namespace R25_Default_Data_Editor
                         output.WriteBool(Leagues[i].IsIdEnabled);
                         output.WriteInt32(Leagues[i].Id, Endian.Little);
                         output.WriteBool(Leagues[i].IsNameEnabled);
-                        output.WriteUInt8(Leagues[i].NameSize);
-                        output.WriteString(Leagues[i].Name);
+                        output.WriteUInt8(Leagues[i].NameSize, Endian.Little);
+                        output.WriteString(Leagues[i].Name, Leagues[i].NameSize);
                         output.WriteBool(Leagues[i].IsShortNameEnabled);
                         output.WriteUInt8(Leagues[i].ShortNameSize);
-                        output.WriteString(Leagues[i].ShortName);
+                        output.WriteString(Leagues[i].ShortName, Leagues[i].ShortNameSize);
                         output.WriteBool(Leagues[i].IsGenderEnabled);
-                        output.WriteInt32(Leagues[i].Gender);
+                        output.WriteInt32(Leagues[i].Gender, Endian.Little);
                         output.WriteBool(Leagues[i].IsFrontEndEnabled);
                         output.WriteBool(Leagues[i].IsFrontend);
                         output.WriteBool(Leagues[i].IsWorldCupLeagueEnabled);
@@ -182,8 +182,18 @@ namespace R25_Default_Data_Editor
                             output.WriteBool(Leagues[i].Teams[j].IsTeamEnabled);
 
                             if (Leagues[i].Teams[j].IsTeamEnabled)
-                                output.WriteInt32(Leagues[i].Teams[j].TeamId);
+                                output.WriteInt32(Leagues[i].Teams[j].TeamId, Endian.Little);
                         }
+
+                        output.WriteBool(Leagues[i].IsEAFlagEnabled);
+
+                        if (Leagues[i].IsEAFlagEnabled)
+                            output.WriteInt32(Leagues[i].EAFlag, Endian.Little);
+
+                        output.WriteBool(Leagues[i].IsUiSorting);
+
+                        if (Leagues[i].IsUiSorting)
+                            output.WriteInt32(Leagues[i].UiSorting, Endian.Little);
                     }
                 }
             }

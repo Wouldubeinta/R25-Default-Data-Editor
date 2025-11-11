@@ -351,7 +351,7 @@
             byte chr;
             while ((chr = br.ReadByte()) != 0)
                 strBytes.Add(chr);
-            return Encoding.ASCII.GetString(strBytes.ToArray());
+            return Encoding.Default.GetString(strBytes.ToArray());
         }
 
         public ushort ReadUInt16()

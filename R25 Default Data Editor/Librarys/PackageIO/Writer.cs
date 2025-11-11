@@ -311,7 +311,7 @@
 
         public void WriteString(string Value, int StartIndex, int Length)
         {
-            byte[] bytes = Encoding.ASCII.GetBytes(Value);
+            byte[] bytes = Encoding.Default.GetBytes(Value);
             Write(bytes, StartIndex, Length);
         }
 
