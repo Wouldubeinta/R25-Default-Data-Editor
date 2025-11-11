@@ -1,0 +1,90 @@
+﻿namespace R25_Default_Data_Editor
+{
+    /// <summary>
+    /// Bitmap Images from png.
+    /// </summary>
+    /// <remarks>
+    ///   RL26 Default Data Editor. Written by Wouldubeinta
+    ///   Copyright (C) 2025 Wouldy Mods.
+    ///   
+    ///   This program is free software; you can redistribute it and/or
+    ///   modify it under the terms of the GNU General Public License
+    ///   as published by the Free Software Foundation; either version 3
+    ///   of the License, or (at your option) any later version.
+    ///   
+    ///   This program is distributed in the hope that it will be useful,
+    ///   but WITHOUT ANY WARRANTY; without even the implied warranty of
+    ///   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    ///   GNU General Public License for more details.
+    ///   
+    ///   You should have received a copy of the GNU General Public License
+    ///   along with this program; if not, write to the Free Software
+    ///   Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+    /// 
+    ///   The author may be contacted at:
+    ///   Discord: Wouldubeinta
+    /// </remarks>
+    /// <history>
+    /// [Wouldubeinta]	   20/10/2025	Created
+    /// </history>
+    internal class BitmapImage
+    {
+        public static Bitmap[] LeagueLogos()
+        {
+            string logoTxt = Global.currentPath + @"\data\logos\league\League_Logos_List.txt";
+            string[]? logos = null;
+            Bitmap[]? Imagelist = null;
+
+            try
+            {
+                if (File.Exists(logoTxt))
+                {
+                    logos = File.ReadAllLines(logoTxt);
+
+                    if (logos == null)
+                        return Imagelist;
+
+                    Imagelist = new Bitmap[logos.Length];
+
+                    for (int i = 0; i < logos.Length; i++)
+                    {
+                        Imagelist[i] = new Bitmap(Global.currentPath + @"\data\logos\league\" + logos[i]);
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("Error occurred, report it to Wouldy : " + error, "Hmm, something stuffed up :(", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+            return Imagelist;
+        }
+
+        public static Bitmap GetLeagueLogo(int index)
+        {
+            string logoTxt = Global.currentPath + @"\data\logos\league\League_Logos_List.txt";
+            string[]? logos = null;
+            Bitmap? logo = null;
+
+            try
+            {
+                if (File.Exists(logoTxt))
+                {
+                    logos = File.ReadAllLines(logoTxt);
+
+                    if (logos == null)
+                        return logo;
+
+                    for (int i = 0; i < logos.Length; i++)
+                    {
+                        logo = new Bitmap(Global.currentPath + @"\data\logos\league\" + logos[index]);
+                    }
+                }
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show("Error occurred, report it to Wouldy : " + error, "Hmm, something stuffed up :(", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+            return logo;
+        }
+    }
+}
