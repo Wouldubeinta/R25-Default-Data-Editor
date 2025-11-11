@@ -167,11 +167,13 @@ namespace R25_Default_Data_Editor
                 IO.ReadWriteData(Global.currentPath + @"\m3mp_header.tmp", writer);
                 IO.ReadWriteData(Global.currentPath + @"\m3mp_compressed_data.tmp", writer);
 
+                int fileSize = (int)IO.FileInfo(Global.currentPath + @"\m3mp_header.tmp") + (int)IO.FileInfo(Global.currentPath + @"\m3mp_compressed_data.tmp");
+
                 ModifyFileInfo m3mpXmlOut = new();
                 m3mpXmlOut.Index = M3MP_Xml_In.Index;
                 m3mpXmlOut.IsCompressed = false;
-                m3mpXmlOut.MainCompressedSize = 0;
-                m3mpXmlOut.MainUnCompressedSize = (int)IO.FileInfo(Global.currentPath + @"\m3mp_header.tmp") + (int)IO.FileInfo(Global.currentPath + @"\m3mp_compressed_data.tmp");
+                m3mpXmlOut.MainCompressedSize = fileSize;
+                m3mpXmlOut.MainUnCompressedSize = fileSize;
                 m3mpXmlOut.VramCompressedSize = 0;
                 m3mpXmlOut.VramUnCompressedSize = 0;
                 IO.XmlSerialize(Global.currentPath + @"\defaultdata.xml", m3mpXmlOut);

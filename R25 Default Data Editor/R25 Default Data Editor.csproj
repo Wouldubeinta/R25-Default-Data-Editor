@@ -13,8 +13,8 @@
     <ApplicationIcon>R25.ico</ApplicationIcon>
     <Description>Edit's Rugby 25 Default Data Leagues (Play Now Lists).</Description>
     <Copyright>Wouldy Mods 2025</Copyright>
-    <AssemblyVersion>1.0.0.2</AssemblyVersion>
-    <FileVersion>1.0.0.2</FileVersion>
+    <AssemblyVersion>1.0.0.3</AssemblyVersion>
+    <FileVersion>1.0.0.3</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>

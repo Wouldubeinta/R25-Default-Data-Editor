@@ -56,13 +56,13 @@
 
             league.Teams[0].IsTeamEnabled = true;
             league.Teams[1].IsTeamEnabled = true;
-            league.Teams[0].TeamId = 18;
-            league.Teams[1].TeamId = 19;
+            league.Teams[0].TeamId = 1;
+            league.Teams[1].TeamId = 2;
 
             if (Gender)
             {
-                league.Teams[0].TeamId = 108;
-                league.Teams[1].TeamId = 109;
+                league.Teams[0].TeamId = 212;
+                league.Teams[1].TeamId = 213;
             }
 
 
