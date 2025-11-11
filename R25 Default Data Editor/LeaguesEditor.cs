@@ -38,13 +38,13 @@ namespace R25_Default_Data_Editor
 
             try
             {
-                dt = new ();
+                dt = new();
                 Imagelist = BitmapImage.LeagueLogos();
 
                 string TeamList = Global.currentPath + @"\data\TeamList.dat";
 
-                teamList_br = new (TeamList);
-                LeagueTeamList leagueTeamList = new LeagueTeamList();
+                teamList_br = new(TeamList);
+                LeagueTeamList leagueTeamList = new();
                 leagueTeamList.Deserialize(teamList_br);
                 Global.teamsList = leagueTeamList.Entries;
 
@@ -54,7 +54,7 @@ namespace R25_Default_Data_Editor
                 dt.Columns.Add("Name", typeof(string));
                 dt.Columns.Add("Short Name", typeof(string));
 
-                br = new (Global.currentPath + @"\defaultdata\defaultdata_leagues", Endian.Little);
+                br = new(Global.currentPath + @"\defaultdata\defaultdata_leagues", Endian.Little);
 
                 Global.leagueData = new LeagueData();
                 Global.leagueData.Deserialize(br);
@@ -229,7 +229,7 @@ namespace R25_Default_Data_Editor
             }
         }
 
-        private void saveLeagueData() 
+        private void saveLeagueData()
         {
             Writer? bw = null;
 

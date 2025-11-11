@@ -4,7 +4,7 @@
     /// Bitmap Images from png.
     /// </summary>
     /// <remarks>
-    ///   RL26 Default Data Editor. Written by Wouldubeinta
+    ///   Rugby 25 Default Data Editor. Written by Wouldubeinta
     ///   Copyright (C) 2025 Wouldy Mods.
     ///   
     ///   This program is free software; you can redistribute it and/or
@@ -25,7 +25,7 @@
     ///   Discord: Wouldubeinta
     /// </remarks>
     /// <history>
-    /// [Wouldubeinta]	   20/10/2025	Created
+    /// [Wouldubeinta]	   11/11/2025	Created
     /// </history>
     internal class BitmapImage
     {

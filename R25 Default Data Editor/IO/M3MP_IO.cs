@@ -8,7 +8,7 @@ namespace R25_Default_Data_Editor
     /// M3MP Create Class.
     /// </summary>
     /// <remarks>
-    ///   RL26 Default Data Editor. Written by Wouldubeinta
+    ///   Rugby 25 Default Data Editor. Written by Wouldubeinta
     ///   Copyright (C) 2025 Wouldy Mods.
     ///   
     ///   This program is free software; you can redistribute it and/or
@@ -25,7 +25,7 @@ namespace R25_Default_Data_Editor
     ///   Discord: Wouldubeinta
     /// </remarks>
     /// <history>
-    /// [Wouldubeinta]	   23/10/2025	Created
+    /// [Wouldubeinta]	   11/11/2025	Created
     /// </history>
     internal class M3MP_IO
     {
